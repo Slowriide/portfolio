@@ -266,21 +266,33 @@ a {
 
 .project-carousel {
   margin-top: 0.9rem;
-  overflow: hidden;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
 }
 
-.project-carousel-track {
+.project-carousel-content {
   display: flex;
-  transition: transform 0.36s ease;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
   will-change: transform;
 }
 
 .project-carousel-item {
-  flex: 0 0 33.3333%;
+  flex: 0 0 100%;
   min-width: 0;
   padding: 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-carousel-item {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .project-carousel-item {
+    flex-basis: 33.3333%;
+  }
 }
 
 .project-grid,

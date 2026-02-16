@@ -1,9 +1,8 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-
-const CARDS_PER_VIEW = 3;
 
 function ProjectCard({ project }) {
   return (
@@ -50,11 +49,29 @@ function ProjectCard({ project }) {
 }
 
 function ProjectsSection({ projects }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const maxIndex = useMemo(() => Math.max(0, projects.length - CARDS_PER_VIEW), [projects.length]);
+  const [api, setApi] = useState(null);
+  const [canGoPrev, setCanGoPrev] = useState(false);
+  const [canGoNext, setCanGoNext] = useState(false);
 
-  const canGoPrev = currentIndex > 0;
-  const canGoNext = currentIndex < maxIndex;
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const updateControls = () => {
+      setCanGoPrev(api.canScrollPrev());
+      setCanGoNext(api.canScrollNext());
+    };
+
+    updateControls();
+    api.on("select", updateControls);
+    api.on("reInit", updateControls);
+
+    return () => {
+      api.off("select", updateControls);
+      api.off("reInit", updateControls);
+    };
+  }, [api]);
 
   return (
     <section id="work" className="section-block reveal" aria-labelledby="work-title">
@@ -67,7 +84,7 @@ function ProjectsSection({ projects }) {
             variant="ghost"
             size="icon"
             className="project-carousel-btn"
-            onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
+            onClick={() => api?.scrollPrev()}
             aria-label="Show previous projects"
             disabled={!canGoPrev}
           >
@@ -78,7 +95,7 @@ function ProjectsSection({ projects }) {
             variant="ghost"
             size="icon"
             className="project-carousel-btn"
-            onClick={() => setCurrentIndex((prev) => Math.min(maxIndex, prev + 1))}
+            onClick={() => api?.scrollNext()}
             aria-label="Show next projects"
             disabled={!canGoNext}
           >
@@ -86,15 +103,15 @@ function ProjectsSection({ projects }) {
           </Button>
         </div>
       </div>
-      <div className="project-carousel" aria-label="Projects carousel">
-        <div className="project-carousel-track" style={{ transform: `translateX(-${(currentIndex * 100) / CARDS_PER_VIEW}%)` }}>
+      <Carousel className="project-carousel" setApi={setApi} opts={{ align: "start" }} aria-label="Projects carousel">
+        <CarouselContent className="project-carousel-content">
           {projects.map((project) => (
-            <div key={project.title} className="project-carousel-item" style={{ flexBasis: `${100 / CARDS_PER_VIEW}%` }}>
+            <CarouselItem key={project.title} className="project-carousel-item">
               <ProjectCard project={project} />
-            </div>
+            </CarouselItem>
           ))}
-        </div>
-      </div>
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 }
