@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui/separator";
 
 function ProcessSection() {
   return (
-    <section id="about" className="section-block reveal" aria-labelledby="about-title">
+    <section id="about" className="section-block safe-section reveal" aria-labelledby="about-title">
       <Card className="panel-card stat-frame-card">
         <CardHeader>
           <CardTitle id="about-title">About Me</CardTitle>

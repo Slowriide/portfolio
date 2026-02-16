@@ -23,7 +23,7 @@ function getContactDetail(item) {
 
 function ContactSection({ contactLinks }) {
   return (
-    <section id="contact" className="section-block contact-section reveal" aria-labelledby="contact-title">
+    <section id="contact" className="section-block safe-section contact-section reveal" aria-labelledby="contact-title">
       <div className="contact-layout">
         <Card className="panel-card contact-card stat-frame-card">
           <CardHeader>

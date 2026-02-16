@@ -201,16 +201,20 @@ a {
   min-width: 0;
 }
 
-.content-wrap > * {
+.safe-section {
   width: 100%;
   max-width: 100%;
   min-width: 0;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+.safe-section > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hero {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
   border: 1px solid var(--border);
   border-radius: calc(var(--radius) + 8px);
   padding: clamp(1.3rem, 3vw, 2.4rem);
@@ -278,19 +282,11 @@ a {
 }
 
 .section-block {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
   backdrop-filter: blur(10px);
   padding: clamp(1.1rem, 2vw, 1.8rem);
-}
-
-.section-block > * {
-  min-width: 0;
-  max-width: 100%;
 }
 
 .section-block--flush {
