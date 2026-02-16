@@ -84,7 +84,7 @@ function ProjectsSection({ projects }) {
   }, [api]);
 
   return (
-    <section id="work" className="section-block reveal" aria-labelledby="work-title">
+    <section id="work" className="section-block safe-section reveal" aria-labelledby="work-title">
       <div className="section-heading project-heading">
         <h2 id="work-title">Selected Work</h2>
         <div className="project-carousel-controls" aria-label="Project carousel controls">

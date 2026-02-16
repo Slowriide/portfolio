@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 function HeroSection({ stats }) {
   return (
-    <section className="hero reveal" aria-labelledby="hero-title">
+    <section className="hero safe-section reveal" aria-labelledby="hero-title">
       <p className="eyebrow">Flutter | React | Next.js Developer</p>
       <h1 id="hero-title">I build clean, fast interfaces with purpose and precision.</h1>
       <p className="hero-copy">

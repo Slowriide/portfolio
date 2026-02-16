@@ -14,6 +14,16 @@ export const heroStats = [
 ];
 
 export const projects = [
+    {
+    title: "CineVault",
+    description: "A movie and TV app with discovery, detail pages, profiles, watchlists, and review tracking.",
+    meta: "React Platform",
+    year: "2025",
+    thumbnail: "CinevaultHomePage.png",
+    technologies: ["TypeScript", "React", "Supabase", "Tailwind CSS"],
+    github: "https://github.com/Slowriide/CineVault",
+    live: "https://cinevaultforum.netlify.app/"
+  },
   {
     title: "dungeons-and-dragons-next",
     description: "A modern D&D 5e character manager and compendium with character creation, search, and auth flows.",
@@ -24,15 +34,15 @@ export const projects = [
     github: "https://github.com/Slowriide/dungeons-and-dragons-next",
     live: "https://dungeons-and-dragons-vert.vercel.app"
   },
-  {
-    title: "CineVault",
-    description: "A movie and TV app with discovery, detail pages, profiles, watchlists, and review tracking.",
-    meta: "React Platform",
+    {
+    title: "RecipeHub",
+    description: "A recipes page SPA.",
+    meta: "React Web App",
     year: "2025",
-    thumbnail: "CinevaultHomePage.png",
-    technologies: ["TypeScript", "React", "Supabase", "Tailwind CSS"],
-    github: "https://github.com/Slowriide/CineVault",
-    live: "https://cinevaultforum.netlify.app/"
+    thumbnail: "RecipehubHomePage.png",
+    technologies: ["TypeScript", "React", "Vite", "CSS"],
+    github: "https://github.com/Slowriide/RecipeHub",
+    live: null
   },
   {
     title: "to_do_app",
@@ -53,7 +63,7 @@ export const projects = [
     technologies: ["Dart", "Flutter"],
     github: "https://github.com/Slowriide/dndapp",
     live: null
-  }
+  },
 ];
 
 export const contactLinks = [
