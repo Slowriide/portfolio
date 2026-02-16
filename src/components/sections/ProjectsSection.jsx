@@ -4,11 +4,21 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
+const PROJECT_THUMB_PLACEHOLDER = "https://placehold.co/1200x675/19161f/c9c3d8?text=Project+Preview";
+
 function ProjectCard({ project }) {
   return (
     <Card className="project-card">
       <div className="project-media-wrap">
-        <img className="project-media" src={project.thumbnail} alt={`${project.title} preview`} loading="lazy" />
+        <img
+          className="project-media"
+          src={project.thumbnail || PROJECT_THUMB_PLACEHOLDER}
+          alt={`${project.title} preview`}
+          loading="lazy"
+          onError={(event) => {
+            event.currentTarget.src = PROJECT_THUMB_PLACEHOLDER;
+          }}
+        />
         <div className="project-media-overlay" aria-hidden="true" />
       </div>
       <CardHeader className="project-card-header">

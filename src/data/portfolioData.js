@@ -15,36 +15,43 @@ export const heroStats = [
 
 export const projects = [
   {
-    title: "Quiet Notes",
-    description: "A writing space with keyboard-first flows, offline drafts, and a calm low-stimulus reading mode.",
-    meta: "Productivity App",
+    title: "dungeons-and-dragons-next",
+    description: "A modern D&D 5e character manager and compendium with character creation, search, and auth flows.",
+    meta: "Next.js Web App",
     year: "2025",
-    thumbnail:
-      "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=1200&q=80",
-    technologies: ["Flutter", "TypeScript", "Firebase"],
-    github: "https://github.com",
-    live: "https://example.com"
+    thumbnail: "https://opengraph.githubassets.com/1/Slowriide/dungeons-and-dragons-next",
+    technologies: ["TypeScript", "Next.js", "Tailwind CSS", "Prisma"],
+    github: "https://github.com/Slowriide/dungeons-and-dragons-next",
+    live: "https://dungeons-and-dragons-vert.vercel.app"
   },
   {
-    title: "Mood Tapes",
-    description: "Playlist discovery that adapts to weather, time of day, and listening patterns in real time.",
-    meta: "Music Discovery",
+    title: "CineVault",
+    description: "A movie and TV app with discovery, detail pages, profiles, watchlists, and review tracking.",
+    meta: "React Platform",
     year: "2025",
-    thumbnail:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
-    technologies: ["React", "Next.js", "Supabase"],
-    github: "https://github.com",
-    live: "https://example.com"
+    thumbnail: "https://opengraph.githubassets.com/1/Slowriide/CineVault",
+    technologies: ["TypeScript", "React", "React Query", "Supabase", "Tailwind CSS"],
+    github: "https://github.com/Slowriide/CineVault",
+    live: null
   },
   {
-    title: "Study Sprint",
-    description: "Pomodoro planner with focus analytics, break pacing, and ambient scenes for deep work sessions.",
-    meta: "Learning Tool",
+    title: "to_do_app",
+    description: "A Flutter notes and todo app with reminders, subtasks, local persistence, and notification scheduling.",
+    meta: "Flutter Mobile App",
+    year: "2025",
+    thumbnail: "https://opengraph.githubassets.com/1/Slowriide/to_do_app",
+    technologies: ["Dart", "Flutter", "Isar", "Bloc"],
+    github: "https://github.com/Slowriide/to_do_app",
+    live: null
+  },
+  {
+    title: "dndapp",
+    description: "A Flutter Dungeons & Dragons app starter focused on mobile-first gameplay tooling and UI flows.",
+    meta: "Flutter Prototype",
     year: "2024",
-    thumbnail:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80",
-    technologies: ["React", "Vite", "Node.js"],
-    github: "https://github.com",
+    thumbnail: "https://opengraph.githubassets.com/1/Slowriide/dndapp",
+    technologies: ["Dart", "Flutter"],
+    github: "https://github.com/Slowriide/dndapp",
     live: null
   }
 ];
