@@ -1,5 +1,5 @@
 export const studioBackgroundUrl =
-  "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1920&q=80";
+  "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=72";
 
 export const navLinks = [
   { label: "Work", href: "#work" },
