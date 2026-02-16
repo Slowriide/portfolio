@@ -268,11 +268,14 @@ a {
   margin-top: 0.9rem;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding-block: 0.85rem;
 }
 
 .project-carousel .overflow-hidden {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   padding-inline: 0.5rem;
 }
 
@@ -280,6 +283,7 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  margin: 0.9rem 0 0.9rem 0 ;
   margin-left: 0;
   margin-right: 0;
   will-change: transform;
@@ -333,57 +337,55 @@ a {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background:
-    linear-gradient(165deg, rgba(19, 16, 14, 0.92), rgba(15, 13, 11, 0.9)),
-    rgba(17, 16, 15, 0.78);
+  background: rgba(28, 27, 25, 0.78);
   border-color: rgba(198, 225, 255, 0.24);
   border-radius: 1.2rem;
   backdrop-filter: blur(11px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 14px 30px rgba(8, 8, 8, 0.34);
 }
 
 .project-card:hover {
-  transform: translateY(-3px) scale(1.008);
-  border-color: rgba(173, 136, 246, 0.5);
+  transform: translateY(-4px) scale(1.012);
+  border-color: rgba(193, 161, 252, 0.58);
   box-shadow:
-    0 16px 30px rgba(8, 8, 8, 0.48),
-    0 0 18px rgba(139, 96, 231, 0.24);
+    0 18px 34px rgba(8, 8, 8, 0.4),
+    0 0 18px rgba(148, 102, 240, 0.24);
 }
 
 .project-card:focus-within {
-  border-color: rgba(196, 165, 255, 0.6);
+  border-color: rgba(182, 220, 255, 0.52);
   box-shadow:
-    0 16px 30px rgba(8, 8, 8, 0.48),
-    0 0 0 1px rgba(196, 165, 255, 0.26),
-    0 0 18px rgba(151, 110, 240, 0.28);
+    0 16px 30px rgba(8, 8, 8, 0.38),
+    0 0 0 1px rgba(182, 220, 255, 0.22);
 }
 
 .project-card-header {
-  padding: 1.05rem 1.05rem 0.75rem;
-  gap: 0.55rem;
+  padding: 1.2rem 1.2rem 0.95rem;
+  gap: 0.72rem;
 }
 
 .project-card-header h3 {
-  margin: 0.1rem 0 0;
+  margin: 0.2rem 0 0;
   font-size: 1.15rem;
-  line-height: 1.25;
+  line-height: 1.35;
   color: var(--text);
   letter-spacing: 0.01em;
 }
 
 .project-card-content {
   margin-top: auto;
-  padding: 0.78rem 1.05rem 1.05rem;
-  border-top: 1px solid rgba(182, 147, 248, 0.24);
-  background: linear-gradient(180deg, rgba(17, 16, 15, 0), rgba(17, 16, 15, 0.42));
+  padding: 1rem 1.2rem 1.2rem;
+  border-top: 1px solid rgba(198, 225, 255, 0.2);
+  background: rgba(26, 25, 23, 0.42);
 }
 
 .project-media-wrap {
   position: relative;
   aspect-ratio: 16 / 9;
-  margin: 1rem 1rem 0;
+  margin: 0.95rem 0.95rem 0;
   border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 10px 20px rgba(6, 5, 7, 0.3);
 }
 
 .project-media {
@@ -401,7 +403,7 @@ a {
   inset: 0;
   background:
     linear-gradient(to top, rgba(9, 8, 7, 0.62), rgba(9, 8, 7, 0.26)),
-    radial-gradient(circle at 84% 16%, rgba(151, 110, 240, 0.24), transparent 42%);
+    radial-gradient(circle at 84% 16%, rgba(171, 198, 235, 0.2), transparent 42%);
   pointer-events: none;
 }
 
@@ -422,11 +424,26 @@ a {
   margin-bottom: 0.12rem;
 }
 
+.project-meta span {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.28rem 0.58rem;
+  border: 1px solid rgba(198, 225, 255, 0.22);
+  background: rgba(27, 26, 24, 0.6);
+}
+
+.project-meta span:last-child {
+  border-color: rgba(198, 225, 255, 0.26);
+  background: rgba(19, 25, 33, 0.6);
+  color: #d9d7de;
+}
+
 .tech-badges {
   display: flex;
   flex-wrap: nowrap;
   gap: 0.5rem;
-  margin-top: 0.45rem;
+  margin-top: 0.65rem;
   height: 1.9rem;
   min-height: 1.9rem;
   align-items: center;
@@ -446,8 +463,9 @@ a {
   -webkit-box-orient: vertical;
   overflow: hidden;
   color: var(--muted);
-  line-height: 1.55;
-  margin-top: 0.05rem;
+  line-height: 1.62;
+  margin-top: 0.18rem;
+  min-height: 4.65em;
 }
 
 .tech-pill {
@@ -472,9 +490,11 @@ a {
 .project-actions {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.72rem;
   flex-wrap: wrap;
   margin-top: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .project-link {
@@ -495,7 +515,7 @@ a {
 }
 
 .project-card .project-link-primary {
-  background: rgba(42, 38, 34, 0.92);
+  background: rgba(43, 39, 35, 0.92);
   border-color: rgba(198, 225, 255, 0.3);
   color: #ece8e2;
 }
@@ -503,8 +523,8 @@ a {
 .project-card .project-link-primary:hover,
 .project-card .project-link-primary:focus-visible {
   background: rgba(56, 50, 45, 0.95);
-  border-color: rgba(192, 158, 255, 0.58);
-  box-shadow: 0 0 12px rgba(148, 102, 240, 0.28);
+  border-color: rgba(176, 214, 255, 0.48);
+  box-shadow: 0 0 10px rgba(128, 171, 219, 0.24);
 }
 
 .project-card .project-link-secondary {
@@ -551,12 +571,13 @@ a {
 }
 
 .about-description {
-  line-height: 1.4;
+  line-height: 1.62;
+  margin-top: 0.25rem;
 }
 
 .about-content p {
-  margin: 10px 0 0 0;
-  line-height: 1.4;
+  margin: 0.78rem 0 0 0;
+  line-height: 1.62;
 }
 
 .contact-card {

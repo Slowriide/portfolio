@@ -8,9 +8,9 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-  { label: "shipped interfaces", value: "15+" },
-  { label: "Lighthouse performance average", value: "95+" },
-  { label: "building production React apps", value: "4 yrs" }
+  { label: "frontend projects completed", value: "10+" },
+  { label: "Flutter Applications", value: "5+" },
+  { label: "APIs Integrated", value: "20+" }
 ];
 
 export const projects = [
@@ -19,7 +19,7 @@ export const projects = [
     description: "A modern D&D 5e character manager and compendium with character creation, search, and auth flows.",
     meta: "Next.js Web App",
     year: "2025",
-    thumbnail: "https://opengraph.githubassets.com/1/Slowriide/dungeons-and-dragons-next",
+    thumbnail: "DndHomePage.png",
     technologies: ["TypeScript", "Next.js", "Tailwind CSS", "Prisma"],
     github: "https://github.com/Slowriide/dungeons-and-dragons-next",
     live: "https://dungeons-and-dragons-vert.vercel.app"
@@ -29,16 +29,16 @@ export const projects = [
     description: "A movie and TV app with discovery, detail pages, profiles, watchlists, and review tracking.",
     meta: "React Platform",
     year: "2025",
-    thumbnail: "https://opengraph.githubassets.com/1/Slowriide/CineVault",
-    technologies: ["TypeScript", "React", "React Query", "Supabase", "Tailwind CSS"],
+    thumbnail: "CinevaultHomePage.png",
+    technologies: ["TypeScript", "React", "Supabase", "Tailwind CSS"],
     github: "https://github.com/Slowriide/CineVault",
-    live: null
+    live: "https://cinevaultforum.netlify.app/"
   },
   {
     title: "to_do_app",
     description: "A Flutter notes and todo app with reminders, subtasks, local persistence, and notification scheduling.",
     meta: "Flutter Mobile App",
-    year: "2025",
+    year: "2024",
     thumbnail: "https://opengraph.githubassets.com/1/Slowriide/to_do_app",
     technologies: ["Dart", "Flutter", "Isar", "Bloc"],
     github: "https://github.com/Slowriide/to_do_app",

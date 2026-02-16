@@ -87,7 +87,6 @@ function ProjectsSection({ projects }) {
     <section id="work" className="section-block reveal" aria-labelledby="work-title">
       <div className="section-heading project-heading">
         <h2 id="work-title">Selected Work</h2>
-        <p>Recent product-focused builds from concept to delivery.</p>
         <div className="project-carousel-controls" aria-label="Project carousel controls">
           <Button
             type="button"
