@@ -7,18 +7,29 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const PROJECT_THUMB_PLACEHOLDER = "https://placehold.co/1200x675/19161f/c9c3d8?text=Project+Preview";
 
 function ProjectCard({ project }) {
+  const hasLocalPngThumb = typeof project.thumbnail === "string" && project.thumbnail.toLowerCase().endsWith(".png");
+  const thumbnailBase = hasLocalPngThumb ? project.thumbnail.replace(/\.png$/i, "") : null;
+
   return (
     <Card className="project-card">
       <div className="project-media-wrap">
-        <img
-          className="project-media"
-          src={project.thumbnail || PROJECT_THUMB_PLACEHOLDER}
-          alt={`${project.title} preview`}
-          loading="lazy"
-          onError={(event) => {
-            event.currentTarget.src = PROJECT_THUMB_PLACEHOLDER;
-          }}
-        />
+        <picture>
+          {thumbnailBase ? <source srcSet={`${thumbnailBase}.avif`} type="image/avif" /> : null}
+          {thumbnailBase ? <source srcSet={`${thumbnailBase}.webp`} type="image/webp" /> : null}
+          <img
+            className="project-media"
+            src={project.thumbnail || PROJECT_THUMB_PLACEHOLDER}
+            alt={`${project.title} preview`}
+            width="1200"
+            height="675"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            onError={(event) => {
+              event.currentTarget.src = PROJECT_THUMB_PLACEHOLDER;
+            }}
+          />
+        </picture>
         <div className="project-media-overlay" aria-hidden="true" />
       </div>
       <CardHeader className="project-card-header">
