@@ -1,7 +1,12 @@
 function SiteHeader({ navLinks, themeOptions, activeThemeId, onThemeChange }) {
+  const handleScrollTop = (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <header className="site-header">
-      <a className="brand" href="#top" aria-label="Go to top">
+      <a className="brand" href="#top" aria-label="Go to top" onClick={handleScrollTop}>
         Thiago Gobbi
       </a>
       <nav aria-label="Main navigation" className="site-nav">
